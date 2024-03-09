@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog
+{% endblock %}
+
+{% block body %}
+
+<header>
+
+  <!-- Background image -->
+  <div
+      {# class="relative h-96 overflow-hidden bg-[url('{{ asset('/images/origami.jpg') }}')] bg-cover bg-no-repeat p-12 text-center lg:h-screen"> #}
+
+    class="relative h-96 overflow-hidden bg-[url('../images/origami.jpg')] bg-cover bg-no-repeat p-12 text-center lg:h-screen">
+    <div
+      class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-teal-950/70 bg-fixed">
+      <div class="flex h-full items-center justify-center">
+        <div class="text-white">
+          <h2 class="font-madimi mb-4 text-4xl font-semibold">
+          BIENVENUE SUR MON SITE TRES ENNUYEUX          
+          </h2>
+          <div class="mb-6 text-xl font-semibold">
+            <p>Je suis dév web hein, pas créateur de contenu </p>
+            <p class="mb-6 text-lg italic">( bon pas graphiste non plus vous allez me dire, on ne se moque pas s'il vous plait !!!)</p>
+          </div>
+          <a
+            class="focus:animate-bounce mt-5  mb-1 inline-block rounded-md border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-300 hover:text-neutral-200 focus:border-neutral-300 focus:text-neutral-200 focus:outline-none focus:ring-0 active:border-neutral-300 active:text-neutral-200 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600"
+            href="#!"
+            role="button"
+            data-twe-ripple-init
+            data-twe-ripple-color="light"
+            >En savoir plus (quand même <span class="" > ... </span>)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+{% endblock %}
