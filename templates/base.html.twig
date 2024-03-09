@@ -47,10 +47,10 @@
 	      class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
 	      id="navbarSupportedContent1"
 	      data-twe-collapse-item>
-	      <!-- Logo -->
+	      <!-- Logo  lien home -->
 	      <a
 	        class="mb-4 me-5 ms-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
-	        href="#">
+	        href="{{ path('app_home')}}">
 	        <img
             {% set url= "https://picsum.photos/200/300" %}
 	          src="{{url}}" 
@@ -63,10 +63,10 @@
 	        class="list-style-none me-auto flex flex-col ps-0 lg:flex-row"
 	        data-twe-navbar-nav-ref>
 	        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-	          <!-- Dashboard link -->
+	          <!-- Dashboard link home aussi -->
 	          <a
 	            class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-	            href="#"
+	            href="{{ path('app_home')}}"
 	            data-twe-nav-link-ref
 	            >HOME</a
 	          >
@@ -75,7 +75,7 @@
 	        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
 	          <a
 	            class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-	            href="#"
+	            href="{{ path('app_post_list')}}"
 	            data-twe-nav-link-ref
 	            >ARTICLES</a
 	          >
@@ -84,9 +84,9 @@
 	        <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
 	          <a
 	            class="text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-	            href="#"
+	            href="{{ path('app_project_list')}}"
 	            data-twe-nav-link-ref
-	            >GALERIE</a
+	            >PROJETS</a
 	          >
 	        </li>
 	      </ul>
@@ -233,6 +233,6 @@
 
         {% block body %}{% endblock %}
         </div>
-        <script type="text/javascript" src="node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <script type="text/javascript" src="/../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
     </body>
 </html>
