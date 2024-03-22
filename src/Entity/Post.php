@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PostRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -14,20 +16,31 @@ class Post
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $Content = null;
+    #[ORM\ManyToOne(inversedBy: 'posts')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Author $author = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
-    private ?string $author = null;
+    #[ORM\OneToMany(targetEntity: Paragraph::class, mappedBy: 'post', orphanRemoval: true)]
+    private Collection $paragraph;
 
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $createdAt = null;
+    #[ORM\OneToMany(targetEntity: Code::class, mappedBy: 'post', orphanRemoval: true)]
+    private Collection $code;
 
-    #[ORM\Column(length: 100, nullable: true)]
-    private ?string $picture = null;
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'posts')]
+    private Collection $tag;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $date = null;
+
+    public function __construct()
+    {
+        $this->paragraph = new ArrayCollection();
+        $this->code = new ArrayCollection();
+        $this->tag = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -46,50 +59,110 @@ class Post
         return $this;
     }
 
-    public function getContent(): ?string
-    {
-        return $this->Content;
-    }
-
-    public function setContent(string $Content): static
-    {
-        $this->Content = $Content;
-
-        return $this;
-    }
-
-    public function getAuthor(): ?string
+    public function getAuthor(): ?Author
     {
         return $this->author;
     }
 
-    public function setAuthor(?string $author): static
+    public function setAuthor(?Author $author): static
     {
         $this->author = $author;
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    /**
+     * @return Collection<int, Paragraph>
+     */
+    public function getParagraph(): Collection
     {
-        return $this->createdAt;
+        return $this->paragraph;
     }
 
-    public function setCreatedAt(?\DateTimeImmutable $createdAt): static
+    public function addParagraph(Paragraph $paragraph): static
     {
-        $this->createdAt = $createdAt;
+        if (!$this->paragraph->contains($paragraph)) {
+            $this->paragraph->add($paragraph);
+            $paragraph->setPost($this);
+        }
 
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function removeParagraph(Paragraph $paragraph): static
     {
-        return $this->picture;
+        if ($this->paragraph->removeElement($paragraph)) {
+            // set the owning side to null (unless already changed)
+            if ($paragraph->getPost() === $this) {
+                $paragraph->setPost(null);
+            }
+        }
+
+        return $this;
     }
 
-    public function setPicture(?string $picture): static
+    /**
+     * @return Collection<int, Code>
+     */
+    public function getCode(): Collection
     {
-        $this->picture = $picture;
+        return $this->code;
+    }
+
+    public function addCode(Code $code): static
+    {
+        if (!$this->code->contains($code)) {
+            $this->code->add($code);
+            $code->setPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCode(Code $code): static
+    {
+        if ($this->code->removeElement($code)) {
+            // set the owning side to null (unless already changed)
+            if ($code->getPost() === $this) {
+                $code->setPost(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Tag>
+     */
+    public function getTag(): Collection
+    {
+        return $this->tag;
+    }
+
+    public function addTag(Tag $tag): static
+    {
+        if (!$this->tag->contains($tag)) {
+            $this->tag->add($tag);
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): static
+    {
+        $this->tag->removeElement($tag);
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(?\DateTimeInterface $date): static
+    {
+        $this->date = $date;
 
         return $this;
     }
