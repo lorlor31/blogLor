@@ -16,6 +16,13 @@ class MainController extends AbstractController
         ]);
     }
 
+    #[Route('/profil', name: 'profile')]
+    public function profil(): Response
+    {
+        return $this->render('main/profile.html.twig', [
+        ]);
+    }
+
     #[Route('/galerie', name: 'gallery')]
     public function gallery(): Response
     {

@@ -1,0 +1,1 @@
+Symfony blog project using WebPackEncore bundle, Tailwind and HyperUI components

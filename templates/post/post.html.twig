@@ -80,7 +80,8 @@
         <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
           <div class="p-4 border-t border-b md:border md:rounded">
             <div class="flex py-2">
-              <img src="{{ asset('/images/lor.png') }}"
+              <img src="{{ asset('images/lor.png') }}"
+        
                 class="h-10 w-10 rounded-full mr-2 object-cover" />
               <div>
                 <p class="font-semibold text-gray-700 text-sm"> {{post.author.name}} </p>
@@ -102,7 +103,7 @@
     <!-- main ends here -->
 
     <!-- footer -->
-    <footer class="border-t mt-12 pt-12 pb-32 px-4 lg:px-0">
+    {# <footer class="border-t mt-12 pt-12 pb-32 px-4 lg:px-0">
       <div> 
         <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" class="h-12 w-12" alt="logo">
       </div>
@@ -145,6 +146,6 @@
         </div>
 
       </div>
-    </footer>
+    </footer> #}
   </div>
 {% endblock %}

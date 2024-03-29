@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil
+{% endblock %}
+
+{% block body %}
+<div>
+    <div>
+        <label htmlfor="AcceptConditions" classname="relative h-8 w-12 cursor-pointer [-webkit-tap-highlight-color:_transparent]">
+            <input type="checkbox" id="AcceptConditions" classname="peer sr-only"/>
+
+            <span classname="absolute inset-0 m-auto h-2 rounded-full bg-gray-300"></span>
+
+            <span classname="absolute inset-y-0 start-0 m-auto size-6 rounded-full bg-gray-500 transition-all peer-checked:start-6 peer-checked:[&_>_*]:scale-0">
+                <span classname="absolute inset-0 m-auto size-4 rounded-full bg-gray-200 transition"></span>
+            </span>
+        </label>
+    </div>
+</div>
+
+
+{% endblock %}

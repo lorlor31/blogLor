@@ -21,9 +21,6 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
-    // findParagsAndCodes()
-
-
 //    /**
 //     * @return Post[] Returns an array of Post objects
 //     */
