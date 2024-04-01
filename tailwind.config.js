@@ -14,6 +14,10 @@ module.exports = {
         madimi: ['"Madimi One"', "sans-serif"],
         // Add more custom font families as needed
       },
+      backgroundImage : {
+        // 'profileBg' : "url('images/profile-bg.jpg')", 
+        // pas utilisée de cette manière pour l'instant
+      }
     },
     plugins: [
       require("tw-elements/plugin.cjs"),

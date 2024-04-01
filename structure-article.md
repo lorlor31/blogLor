@@ -24,3 +24,6 @@ code 2
 parag 3
 parag 4 etc...
 Idee changer l'entite parag pour avoir type=code ou parag 
+
+
+faire un foormulaire pomur créer un articlde et dedans un formulaire pomur créer lesparagraphes
