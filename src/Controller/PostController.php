@@ -27,7 +27,7 @@ class PostController extends AbstractController
     //     ]);
     // }
 
-    #[Route('/{id<\d+>}', name: 'show_post')]
+    #[Route('/{id<\d+>}', name: 'show')]
     public function showPost(Post $post): Response
     {
         return $this->render('post/post.html.twig', [

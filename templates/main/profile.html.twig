@@ -4,16 +4,16 @@
 {% endblock %}
 
 {% block body %}
-
-<div class="bg-[url('../images/profile-bg.jpg')] "> 
-
 		{# Switch qui apparait tout moche ? pourquoi ? #}
 		{# voir si je peux pas le dynamiser moi meme ? c doommage  #}
-			<label for="AcceptConditions" class="relative h-8 w-14 cursor-pointer rounded-full bg-gray-700 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-green-500"> <input type="checkbox" id="AcceptConditions" class="peer sr-only"/>
-			<span class="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6 "></span>
-			</label>
-{# TODOpb avec margin paddin ? verifier les div ?  #}
-		<div class="wrapper flex flex-col p-16 border-2 border-black mx-[25dvw] py-24 bg-teal-50/50">
+	{# <label for="AcceptConditions" class="relative h-8 w-14 cursor-pointer rounded-full bg-gray-700 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-green-500"> 
+		<input type="checkbox" id="AcceptConditions" class="peer sr-only"/>
+		<span class="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6 "></span>
+	</label> #}
+
+	<div class="bg-[url('../images/profile-bg.jpg')] justify-around bg-cover flex flex-col min-h-[90dvh] ">
+		{# TODO pb avec margin paddin ? verifier les div ?  #}
+		<div class="flex flex-col p-16 border-2 justify-around border-black mx-auto max-w-[60dvw] rounded-lg max-h-[80dvh] overflow-auto  py-[5dvh] bg-teal-50/70">
 			<h1 class="text-center text-xl">
 				Bonjour ! Je suis Laure , développeuse web !
 			</h1>
@@ -39,21 +39,19 @@
 			<p class="paragProfile" class="paragProfile">
 				Pour être honnête, je suis encore en phase d'apprentissage
 				<i>(ça doit se voir)
-				</i>et pense que je le serai toujours, vu l'évolution fulgurante des technos. C'est justement ça qui rend le domaine de la programmation palpitant et stimulant. Et c'est notamment pour ça que je me suis reconvertie vers ce domaine.
-			<p class="paragProfile">
-				Je sais pas si on s'en rend compte à travers mes projets mais je suis quelqu'un de très dynamique et pleine de vie.
-                Attention, cela ne veut pas dire que je ne suis pas sérieuse, bien au contraire, mais c'est important d'être positif à chaque instant de la vie, ça aide à affronter les difficultés. 🐛</s>
+				</i>et pense que je le serai toujours, vu l'évolution fulgurante des technos. C'est justement ça qui rend le domaine de la programmation palpitant et stimulant. Et c'est notamment pour ça que je me suis reconvertie vers ce domaine.</p>
+			<p class="paragProfile">Je sais pas si on s'en rend compte à travers mes projets mais je suis quelqu'un de très dynamique et pleine de vie.
+				                Attention, cela ne veut pas dire que je ne suis pas sérieuse, bien au contraire, mais c'est important d'être positif à chaque instant de la vie, ça aide à affronter les difficultés. 🐛
 			</p>
 			<p class="paragProfile">
 				Vous remarquerez que j'utilise pas ChatGPT pour écrire mes textes, je sais pas si elle saurait écrire comme moi, sûrement... 
-                "ChatGPT !  Ecris comme on pense !! " <span class="italic">"Comme on pense !"</span>
+								"ChatGPT !  Ecris comme on pense !! "
+				<span class="italic">"Comme on pense !"</span>
 			</p>
 			<p class="paragProfile">
-				Bref, j'arrête de me présenter, vous avez peut-être déjà fui.</p>
+			Bref, j'arrête de me présenter, vous avez peut-être déjà fui.
+			</p>
 		</div>
-
-</div>
-
-
+	</div>
 {% endblock %}
 
