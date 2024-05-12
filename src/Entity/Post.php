@@ -23,13 +23,13 @@ class Post
     #[ORM\JoinColumn(nullable: false)]
     private ?Author $author = null;
 
-    #[ORM\OneToMany(targetEntity: Paragraph::class, mappedBy: 'post', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Paragraph::class, mappedBy: 'post', orphanRemoval: true,cascade: ['persist','remove'])]
     private Collection $paragraph;
 
-    #[ORM\OneToMany(targetEntity: Code::class, mappedBy: 'post', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Code::class, mappedBy: 'post', orphanRemoval: true,cascade: ['persist','remove'])]
     private Collection $code;
 
-    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'posts')]
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'posts',orphanRemoval: true,cascade: ['persist', 'remove'])]
     private Collection $tag;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]

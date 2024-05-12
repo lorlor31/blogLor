@@ -14,6 +14,9 @@ import {
     initTWE,
   } from "tw-elements";
 
+//My ES Modules
+import {handleCoucou} from './js/coucou.js' ;
+
 initTWE({ Carousel });
 initTWE({ Button });
 

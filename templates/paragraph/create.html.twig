@@ -1,0 +1,53 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Creation d'un paragraphe
+{% endblock %}
+
+{% form_theme formParag 'tailwind_2_layout.html.twig' %}
+
+{% block body %}
+
+{% for label, messages in app.flashes(['success', 'warning']) %}
+    {% for message in messages %}
+        {# <div class="flash-{{ label }}">
+            {{ message }}
+        </div> #}
+        <div role="alert" class="rounded border-s-4 border-teal-500 bg-teal-50 p-4">
+  <strong class="block font-medium text-teal-800"> {{ label }} </strong>
+
+  <p class="mt-2 text-sm text-teal-700">
+    {{ message }}
+  </p>
+</div>
+    {% endfor %}
+{% endfor %}
+
+
+
+{% set createdPostId = app.session.get('createdPostId') %}
+<div class="relative w-[50dvw] bg-blue-100 mx-auto my-12 p-5">
+
+{{form_start(formParag)}}
+    <h2 class="text-center"> Creation d'un paragraphe pour l'article {{createdPostId}}</h2>
+{{ form_widget(formParag) }}
+
+<button class="w-full
+   bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-end">
+Créer 
+</button>
+<button class="w-full
+   bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-end"
+>
+{# <a    
+href="{{absolute_url(path('app_post_show',{id:1}))}}">
+Créer et revenir 
+
+</a> #}
+</button>
+{{form_end(formParag)}}
+
+</div>
+
+{% endblock %}
