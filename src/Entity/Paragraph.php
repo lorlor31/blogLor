@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ParagraphRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ParagraphRepository::class)]
 class Paragraph
@@ -20,11 +21,15 @@ class Paragraph
     #[ORM\Column]
     private ?int $order_number = null;
 
-    #[ORM\ManyToOne(inversedBy: 'paragraph')]
+    #[ORM\ManyToOne(inversedBy: 'paragraph',cascade: ['persist','remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Post $post = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\ExpressionSyntax(
+        allowedVariables: ['code', 'paragraphe','intro'],
+        message : 'You should provide a valid type of paragaph ! '
+    )]
     private ?string $type = null;
 
     public function getId(): ?int
