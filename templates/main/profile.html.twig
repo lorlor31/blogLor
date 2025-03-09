@@ -1,57 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profil
-{% endblock %}
+{% block title %}Profil{% endblock %}
 
 {% block body %}
-		{# Switch qui apparait tout moche ? pourquoi ? #}
-		{# voir si je peux pas le dynamiser moi meme ? c doommage  #}
-	{# <label for="AcceptConditions" class="relative h-8 w-14 cursor-pointer rounded-full bg-gray-700 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-green-500"> 
-		<input type="checkbox" id="AcceptConditions" class="peer sr-only"/>
-		<span class="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6 "></span>
-	</label> #}
 
-	<div class="bg-[url('../images/profile-bg.jpg')] justify-around bg-cover flex flex-col min-h-[90dvh] ">
-		{# TODO pb avec margin paddin ? verifier les div ?  #}
-		<div class="flex flex-col p-16 border-2 justify-around border-black mx-auto max-w-[75dvw] rounded-lg max-h-[80dvh] overflow-auto  py-[5dvh] bg-teal-50/70">
-			<h1 class="text-center text-xl">
-				Bonjour ! Je suis Laure , développeuse web !
-			</h1>
-			<p class="paragProfile">
-				Vous avez un aperçu des technos que je maîtrise via les différents projets que j'ai mis en ligne :
-			</p>
-			<ul class="list-disc mx-auto max-w-[80%] text-justify">
-				<li>
-					la mise en place de sites statiques en HTML et configurer leur apparence avec le CSS</li>
-				<li>
-					la dynamisation (animation, interactions) côté client avec le JS
-				</li>
-				<li>
-					la gestion des données et de la sécurité côté serveur avec PHP et SQL
-				</li>
-				<li>
-					l'utilisation de frameworks pour améliorer ma productivité (Symfony,React,Tailwind)
-				</li>
-				<li>
-					et bien sûr tous les outils indispensables du développeur : Git, Linux, Shell, Google 🐵
-				</li>
-			</ul>
-			<p class="paragProfile" class="paragProfile">
-				Pour être honnête, je suis encore en phase d'apprentissage
-				<i>(ça doit se voir)
-				</i>et pense que je le serai toujours, vu l'évolution fulgurante des technos. C'est justement ça qui rend le domaine de la programmation palpitant et stimulant. Et c'est notamment pour ça que je me suis reconvertie vers ce domaine.</p>
-			<p class="paragProfile">Je sais pas si on s'en rend compte à travers mes projets mais je suis quelqu'un de très dynamique et pleine de vie.
-				                Attention, cela ne veut pas dire que je ne suis pas sérieuse, bien au contraire, mais c'est important d'être positif à chaque instant de la vie, ça aide à affronter les difficultés. 🐛
-			</p>
-			<p class="paragProfile">
-				Vous remarquerez que j'utilise pas ChatGPT pour écrire mes textes, je sais pas si elle saurait écrire comme moi, sûrement... 
-								"ChatGPT !  Ecris comme on pense !! "
-				<span class="italic">"Comme on pense !"</span>
-			</p>
-			<p class="paragProfile">
-			Bref, j'arrête de me présenter, vous avez peut-être déjà fui.
-			</p>
-		</div>
-	</div>
+
+<div class="w-12 text-cyan-300 bg-blue-500 h-10">
+<p class="text-red-300">Coucou</p>
+</div>
+
+    <div class="container mx-auto p-8 max-w-screen-lg bg-gray-100">
+        <!-- Conteneur Masonry avec des colonnes responsives -->
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-4">
+            <!-- Chaque élément représente un paragraphe avec une couleur de fond différente -->
+
+            <div class="bg-red-400 p-4 rounded-lg shadow-md break-inside-avoid w-full mb-4">
+                <p>Ce premier paragraphe est court.</p>
+            </div>
+
+            <div class="bg-blue-400 p-4 rounded-lg shadow-md break-inside-avoid w-full mb-4">
+                <p>Ce second paragraphe est un peu plus long pour tester l'effet masonry. Il prend plus de place et devrait s'afficher naturellement en colonne.</p>
+            </div>
+
+            <div class="bg-green-400 p-4 rounded-lg shadow-md break-inside-avoid w-full mb-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+            </div>
+
+            <div class="bg-yellow-400 p-4 rounded-lg shadow-md break-inside-avoid w-full mb-4">
+                <p>Encore un texte plus court.</p>
+            </div>
+
+            <div class="bg-purple-400 p-4 rounded-lg shadow-md break-inside-avoid w-full mb-4">
+                <p>Un paragraphe bien plus long pour voir comment il s'affiche dans la grille. Il devrait être plus haut que les autres.</p>
+            </div>
+
+            <div class="bg-pink-400 p-4 rounded-lg shadow-md break-inside-avoid w-full mb-4">
+                <p>Un autre paragraphe avec une taille moyenne.</p>
+            </div>
+
+            <div class="bg-orange-400 p-4 rounded-lg shadow-md break-inside-avoid w-full mb-4">
+                <p>Un bloc encore différent avec un texte court.</p>
+            </div>
+
+            <div class="bg-teal-400 p-4 rounded-lg shadow-md break-inside-avoid w-full mb-4">
+                <p>Un dernier exemple de paragraphe.</p>
+            </div>
+        
+        </div>
+    </div>
 {% endblock %}
+
 
